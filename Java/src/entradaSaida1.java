@@ -1,11 +1,10 @@
-package Java;
+package Java.src;
 
 import java.util.Scanner;
 
-public class stindAndStdout {
+public class entradaSaida1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
@@ -15,5 +14,5 @@ public class stindAndStdout {
         System.out.println(c);
 
         scan.close();
-    }
+    }       
 }
