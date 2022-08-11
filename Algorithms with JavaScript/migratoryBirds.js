@@ -1,15 +1,16 @@
 function migratoryBirds(arr) {
 
     let array = [];
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (i != j && arr[i] === arr[j]) {
-                array.push(arr[i]);
-            }
-        }
+    
+    // ordenando o arr
+    arr.sort((a, b) => a - b);
+
+    //[ 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5 ]
+    for(let i = 0; i < arr.length; i++){
+
     }
 
-    return array;
+    return arr;
 }
 
 console.log(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]));
