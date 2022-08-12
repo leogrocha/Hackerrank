@@ -2,7 +2,8 @@ function migratoryBirds(arr) {
 
     let array = [];
     let sum = 1;
-    
+    let bigger = 0;
+
     // ordenando o arr
     arr.sort((a, b) => a - b);
 
@@ -20,30 +21,18 @@ function migratoryBirds(arr) {
     }
 
     for(let j = 0; j < array.length; j++){
-        console.log(array[j]);
+        if(array[j].qtde_elementos > bigger){
+            bigger = array[j].qtde_elementos;
+        }
     }
 
-
-    return array;
+    const bigger_element = array.filter(num => num.qtde_elementos == bigger);
+    
+    return bigger_element[0].id;
 }
 
 console.log(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]));
+console.log(migratoryBirds([1,4,4,4,5,3]));
 
-
-// var funcionario = [
-//     { id: 1, nome: 'Teste 1', salario: 1000.00 },
-//     { id: 2, nome: 'Teste 2', salario: 2000.00 },
-//     { id: 3, nome: 'Teste 3', salario: 3000.00 },
-//     { id: 4, nome: 'Teste 4', salario: 4000.00 },
-// ]
-
-// console.log(funcionario);
-
-// funcionario.push({
-//     id: 5,
-//     nome: 'Teste 5',
-//     salario: 6000.00
-// });
-// console.log(funcionario);
 
 
