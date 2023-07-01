@@ -10,11 +10,15 @@ function beatifulDays(startDay, finalDay, divider) {
         const array = [...index.toString()];
         const arrayReverse = array.reverse();
         arrayReverse.map(value => valueInverse += value);
-        var result = Math.abs(index - Number(valueInverse)) / divider;
+        // var result = Math.abs(index - Number(valueInverse)) / divider;
 
-        const notation = result.toString().includes("e") || result.toString().includes("E");
+        // const notation = result.toString().includes("e") || result.toString().includes("E");
         
-        if (!result.toString().includes('.') && !notation) {
+        // if (!result.toString().includes('.') && !notation) {
+        //     countNumbers++;
+        // }
+
+        if (Math.abs((index - Number(valueInverse)) % divider) == 0) {
             countNumbers++;
         }
         
