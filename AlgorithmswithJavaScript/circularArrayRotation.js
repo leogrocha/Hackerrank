@@ -14,11 +14,6 @@ function circularArrayRotation(a, k, queries) {
 
     queries.map(value => new_array.push(a[value]));
 
-    // for (let i = 0; i < queries.length; i++) {
-    //     var value = queries[i];
-    //     new_array.push(a[value]);
-    // }
-
     return new_array;
 }
 
