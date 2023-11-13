@@ -24,8 +24,6 @@
 
 // console.log(equalizeArray([3, 3, 2, 1, 3]));
 
-const arr = [5, 4, 4, 2, 2, 8];
-arr.sort((a, b) => a - b);
-arr.splice(0, 1);
-
-console.log(arr);
+for (let index = 2; index <= 9; index++) {
+    console.log(` ${index} % 8 = ${index % 8}`);
+}
