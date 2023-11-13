@@ -1,35 +1,41 @@
 function equalizeArray(arr) {
+  var nums = [];
+  var itensRemovidos = 0;
+  var valorMaiorQuantidade = 0;
+  var count = 0;
+  
+  arr.sort((a, b) => a - b);
 
-    arr.sort((a, b) => a - b);
-    const nums = [];
-    let count= 0;
-    let index = 0;
+  for (let index = 0; index < arr.length; index++) {
+    if(arr[index+1] != undefined && arr[index] == arr[index+1]) {
+        count++;
+    } else {
+        count++;
+        nums.push({
+            value: arr[index],
+            quantity: count
+        })
 
-    while(index < arr.length) {
-        
-        let next = arr[index+1];
-        if(!next && next === arr[index]) {
-            count++;
-            index+=2;
-        } else {
-            nums.push({
-                value: arr[index],
-                quantity: count
-            });
-
-            count = 0;
-            index++;
-        }
-
-        return nums;
-
+        count = 0;
     }
     
+}
 
-    
+  const itemMaiorQuantidade = () => {
+    nums.map((item) =>  valorMaiorQuantidade = Math.max(item.quantity, valorMaiorQuantidade));
+    return nums.find((item) => item.quantity == valorMaiorQuantidade).value;
+  }
 
-    
-    return arr;
+  var valorEquilibrio = itemMaiorQuantidade();
+
+  arr.map((value) => {
+    if(value != valorEquilibrio) {
+        itensRemovidos++;
+    }
+  })
+
+
+  return itensRemovidos;
 }
 
 console.log(equalizeArray([3, 3, 2, 1, 3]));
