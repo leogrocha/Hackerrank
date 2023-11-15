@@ -1,4 +1,4 @@
-function serviceLane(n, cases, width) {
+function serviceLane(n, t, width, cases) {
     var results = [];
     var nums = []; 
     
@@ -16,4 +16,4 @@ function serviceLane(n, cases, width) {
     return results;
 }
 
-console.log(serviceLane(8, [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]], [2, 3, 1, 2, 3, 2, 3, 3]));
+console.log(serviceLane(8, 5, [2, 3, 1, 2, 3, 2, 3, 3], [[0, 3], [4, 6], [6, 7], [3, 5], [0, 7]]));
