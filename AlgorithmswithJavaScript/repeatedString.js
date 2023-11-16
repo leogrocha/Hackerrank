@@ -1,25 +1,27 @@
 function repeatedString(s, n) {
-    var itens = [];
-    let count = 0;
+    const qtdeItensPercorrer = Math.abs(n - s.length);
 
-    let index = 0;
+    // var itens = [];
+    // let count = 0;
 
-    for(let i = 0; i < n; i++) {
-        if(s[i] != undefined) {
-            itens.push(s[i]);
-        } else {
-            itens.push(s[index]);
-            index = index + 1 == s.length ? 0 : index + 1;
-        }
-    }
+    // let index = 0;
 
-    itens.map((value) => {
-        if(value == 'a') {
-            count++;
-        }
-    })
+    // for(let i = 0; i < n; i++) {
+    //     if(s[i] != undefined) {
+    //         itens.push(s[i]);
+    //     } else {
+    //         itens.push(s[index]);
+    //         index = index + 1 == s.length ? 0 : index + 1;
+    //     }
+    // }
 
-    return count;
+    // itens.map((value) => {
+    //     if(value == 'a') {
+    //         count++;
+    //     }
+    // })
+
+    return qtdeItensPercorrer;
 }
 
 // console.log(repeatedString('aba', 10));
