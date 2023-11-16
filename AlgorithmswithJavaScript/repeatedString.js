@@ -1,28 +1,34 @@
 function repeatedString(s, n) {
-    const qtdeItensPercorrer = Math.abs(n - s.length);
 
-    // var itens = [];
-    // let count = 0;
+    if(s.length == 1 && s === 'a') {
+        return n;
+    }
 
-    // let index = 0;
+    const quantidadeItensLetraA = s.split('').filter((item) => item == 'a').length;
+    if(quantidadeItensLetraA === 0) {
+        return 0;
+    }
 
-    // for(let i = 0; i < n; i++) {
-    //     if(s[i] != undefined) {
-    //         itens.push(s[i]);
-    //     } else {
-    //         itens.push(s[index]);
-    //         index = index + 1 == s.length ? 0 : index + 1;
-    //     }
-    // }
+    const divisor = Math.floor(n / s.length);
+    const restante = n % s.length;
+    const multplicacaoItens = divisor * quantidadeItensLetraA;
+    var nums = [];
+    var index = 0;
 
-    // itens.map((value) => {
-    //     if(value == 'a') {
-    //         count++;
-    //     }
-    // })
+    while(nums.length != restante) {
+        nums.push(s[index]);
+        index = index === s.length ? 0 : index + 1;
+    }
 
-    return qtdeItensPercorrer;
+    console.log(nums);
+
+    const quantidadeRestante = nums.filter((item) => item == 'a').length;
+
+    return multplicacaoItens + quantidadeRestante;   
 }
 
-// console.log(repeatedString('aba', 10));
-console.log(repeatedString('a', 1000000000000));
+console.log(repeatedString('aba', 10));
+// console.log(repeatedString('a', 20));
+// console.log(repeatedString('a', 1000000000000));
+
+// console.log(repeatedString('kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm', 736778906400));
