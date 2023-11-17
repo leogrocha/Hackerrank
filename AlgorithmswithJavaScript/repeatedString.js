@@ -27,8 +27,8 @@ function repeatedString(s, n) {
     return multplicacaoItens + quantidadeRestante;   
 }
 
-console.log(repeatedString('aba', 10));
+// console.log(repeatedString('aba', 10));
 // console.log(repeatedString('a', 20));
-// console.log(repeatedString('a', 1000000000000));
+console.log(repeatedString('a', 1000000000000));
 
-// console.log(repeatedString('kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm', 736778906400));
+console.log(repeatedString('kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm', 736778906400));
