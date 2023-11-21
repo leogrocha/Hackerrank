@@ -1,53 +1,38 @@
-// function workbook(n, k, arr) {
-//     let sumPages = 0;
-//     let index = 1;
-    
-//     for (let i = 0; i < arr.length; i++) {
-//         let valorDividido = Math.floor(arr[i] / k);
-//         let restanteDivisao = Math.floor(arr[i] % k);
-//         let totalCapitulos = valorDividido === 0 ? 1 : parseInt(valorDividido + restanteDivisao);
-//         sumPages += totalCapitulos;
-
-//     }
-
-//     return sumPages;
-// }
-
-// function povoarPaginas(valorInicial, valorFinal) {
-//     var item = [];
-
-//     for(let i = valorInicial; i <= valorFinal; i++) {
-//         item.push(i);
-//     }
-
-//     pages.push(item);
-// }
-
-// console.log(workbook(5, 3, [4, 2, 6, 1, 10]));
-// workbook(5,3, [4, 2, 6, 1, 10]);
-
 function workbook(n, k, arr) {
-    let indexItens = 1;
-    let indexArr = 1;
-    let itens = [];
-    let sumItensArray = arr.reduce((accumulator, value) => accumulator + value, 0);
     let pages = [];
+    let itens = [];
+    let count = 0;
 
-    for(let i = 1; i <= sumItensArray; i++) {
+    for(let i = 0; i < arr.length; i++) {
         
+        itens = [];
+        
+        for(let j = 1; j <= arr[i]; j++) {
+            if(itens.length + 1 <= k) {
+                itens.push(j);
+            } else {
+                pages.push(itens);
+                itens = [];
+                itens.push(j);
 
-        // if(itens.length != k || indexItens != arr[indexArr]) {
-        //     itens.push(i);
-        //     indexItens++;
-        // } else {
-        //     pages.push(itens);
-        //     indexItens++;
-        //     itens = [];
-        // }
+            } 
+        }       
+
+        if(itens.length > 0) {
+            pages.push(itens);
+        }
 
     }
 
-    return pages;
+    for (let i = 0; i < pages.length; i++) {
+        let existeValorIgualPagina = pages[i].some((value) => value === i+1);
+        console.log("VALOR IGUAL: ", existeValorIgualPagina)
+        existeValorIgualPagina ? count++ : count;
+    }
+
+
+    return count;
+    
 
 }
 
