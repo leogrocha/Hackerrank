@@ -26,7 +26,7 @@ function cavityMap(grid) {
         console.log("VALUE: " + grid[row][index]);
 
         if(isBigger) {
-            grid[row][index].replace("X");
+            grid[1] = grid[1].substring(0, 1) + 'X' + grid[1].substring(2);
         }
     }
 
