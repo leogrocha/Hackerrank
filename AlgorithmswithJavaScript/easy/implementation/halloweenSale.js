@@ -1,8 +1,3 @@
-// p -> o preço do primeiro jogo
-// d -> o desconto do preço do jogo anterior.
-// m -> o custo mínimo de um jogo.
-// s -> o orçamento inicial.
-
 function howManyGames(precoPrimeiroJogo, desconto, custoMinimo, orcamentoInicial) {
     let count = 0;
     let valorGasto = precoPrimeiroJogo;
