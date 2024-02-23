@@ -4,13 +4,8 @@ function howManyGames(precoPrimeiroJogo, desconto, custoMinimo, orcamentoInicial
     let valorReduzido = precoPrimeiroJogo;
 
     while (valorGasto <= orcamentoInicial) {
-        valorReduzido -= desconto;
-        if(valorReduzido <= custoMinimo){
-            valorReduzido = custoMinimo;
-        }
-
+        valorReduzido = valorReduzido <= custoMinimo ? custoMinimo : valorReduzido -= desconto;
         valorGasto += valorReduzido;
-        
         count++;
     }
 
