@@ -1,22 +1,21 @@
-let grid = ['989','191', '111'];
-grid[1][1] = "X"
+let j = 0;
+let arr = [10,20,30,40,50,60,70];
 
+// for (let i = 0; i < arr.length; i++) {
+//     j = i+1;
+//     while (j < arr.length) {
+//         console.log(j);
+//         j++;
+//     }
+// }
 
+let quantidadeDiferencaEquivalente = 3;
+let d = 3;
+let count = 0;
 
+while(quantidadeDiferencaEquivalente < d && j < arr.length) {
+    console.log("teste");
 
-let word = "191";
-
-let index = 1;
-
-console.log(word.slice(0,1));
-
-
-
-
-
-
-
-
-
-
-
+    count++;
+    if(count==5) break;
+}
